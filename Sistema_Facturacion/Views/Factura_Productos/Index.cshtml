@@ -7,59 +7,60 @@
 
 <h1>Detalle Factura</h1>
 
-
-<p>
-    @if (string.Format(ViewBag.Anulada) != "S")
-    {
-        <a asp-action="Create" asp-route-id="@TempData["Numero_Factura"]">Crear Detalle Factura</a>
-    }
-</p>
-
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio_Unitario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Numero_Facturafk)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Codigo_Productofk)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+<div class="table-responsive">
+    <p>
+        @if (string.Format(ViewBag.Anulada) != "S")
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio_Unitario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero_Facturafk)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo_Productofk)
-            </td>
-            @if (string.Format(ViewBag.Anulada) != "S")
-            {
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { numero_Factura = @TempData["Numero_Factura"], codigo_Producto = item.Codigo_Productofk }) |
-                    @Html.ActionLink("Eliminar", "Delete", new { numero_Factura = @TempData["Numero_Factura"], codigo_Producto = item.Codigo_Productofk })
-                </td>
-            }
-
-        </tr>
-            
+            <a asp-action="Create" asp-route-id="@TempData["Numero_Factura"]">Crear Detalle Factura</a>
         }
-    </tbody>
-</table>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio_Unitario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero_Facturafk)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Productofk)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio_Unitario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero_Facturafk)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Productofk)
+                    </td>
+                    @if (string.Format(ViewBag.Anulada) != "S")
+                    {
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { numero_Factura = @TempData["Numero_Factura"], codigo_Producto = item.Codigo_Productofk }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { numero_Factura = @TempData["Numero_Factura"], codigo_Producto = item.Codigo_Productofk })
+                        </td>
+                    }
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
 

@@ -5,70 +5,71 @@
 }
 
 <h1>Facturas</h1>
-
-<p>
-    <a asp-action="Create">Crear Factura</a>
-</p>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Numero_Factura)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Total_Factura)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Anulada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cliente.Codigo_Cliente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cliente.Nombres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cliente.Apellido)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <p>
+        <a asp-action="Create">Crear Factura</a>
+    </p>
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Numero_Factura)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fecha)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Total_Factura)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Anulada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cliente.Codigo_Cliente)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cliente.Nombres)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cliente.Apellido)
-                </td>
-                <td>
-                    <a asp-action="DetalleFactura" asp-route-id="@item.Numero_Factura">Detalle Factura</a>
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Numero_Factura">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Numero_Factura">Eliminar</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero_Factura)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Total_Factura)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Anulada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente.Codigo_Cliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente.Nombres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente.Apellido)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero_Factura)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total_Factura)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Anulada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Codigo_Cliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Nombres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Apellido)
+                    </td>
+                    <td>
+                        <a asp-action="DetalleFactura" asp-route-id="@item.Numero_Factura">Detalle Factura</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Numero_Factura">Editar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Numero_Factura">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
