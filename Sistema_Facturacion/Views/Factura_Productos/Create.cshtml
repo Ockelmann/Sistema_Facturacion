@@ -1,0 +1,38 @@
+﻿@model Sistema_Facturacion.Models.Factura_Productos
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear Detalle Factura</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Numero_Facturafk" value="@TempData["Numero_Factura"]" class="form-control" type="hidden"/>
+                <span asp-validation-for="Numero_Facturafk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codigo_Productofk" class="control-label"></label>
+                <select asp-for="Codigo_Productofk" class="form-control" asp-items="ViewBag.Codigo_Producto"></select>
+                <span asp-validation-for="Codigo_Productofk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-id="@TempData["Numero_Factura"]">Volver</a>
+</div>

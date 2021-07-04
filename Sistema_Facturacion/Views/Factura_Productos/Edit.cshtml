@@ -1,0 +1,40 @@
+﻿@model Sistema_Facturacion.Models.Factura_Productos
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4>Factura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Numero_Facturafk" type="hidden" />
+            <input asp-for="Codigo_Productofk" type="hidden" />
+            <div class="form-group">
+                <label asp-for="Precio_Unitario" class="control-label"></label>
+                <input asp-for="Precio_Unitario" class="form-control" />
+                <span asp-validation-for="Precio_Unitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-action="Index" asp-route-id="@TempData["Numero_Factura"]">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

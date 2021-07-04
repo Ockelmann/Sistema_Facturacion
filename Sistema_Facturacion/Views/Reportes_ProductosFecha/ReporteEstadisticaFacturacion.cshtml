@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Sistema_Facturacion.Models.Reporte_Estadistica>
+
+@{
+    ViewData["Title"] = "Reporte Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    function ShowSelected() {
+        var fechaini = document.getElementById("fechainicio").value;
+        var fechafin = document.getElementById("fechafinal").value;
+
+        if (fechaini != "" && fechafin != "") {
+
+
+            var url = "@Url.Action("ReporteEstadisticaFacturacion", "Reportes_ProductosFecha", new { FechaInicio = "param-fecha1", FechaFinal = "param-fecha2" })";
+            url = url.replace("param-fecha1", fechaini).replace("param-fecha2", fechafin);
+            url = url.replace("amp;", "");
+            $("#result").load(url);
+            window.location.href = url;
+        }
+
+    }
+</script>
+
+<h1>Reporte Productos</h1>
+
+
+<div class="form-group">
+    <input type="date" id="fechainicio" onchange="ShowSelected()" class="form-control" />
+
+</div>
+
+<div class="form-group">
+    <input type="date" id="fechafinal" onchange="ShowSelected()" class="form-control" />
+</div>
+
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Facturas_Emitidas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad_Productos)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Facturas_Emitidas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad_Productos)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

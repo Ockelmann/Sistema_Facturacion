@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema_Facturacion", "Sistema_Facturacion\Sistema_Facturacion.csproj", "{BE8D970D-F2A4-4D6B-AA4C-910EE132A3F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE8D970D-F2A4-4D6B-AA4C-910EE132A3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8D970D-F2A4-4D6B-AA4C-910EE132A3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8D970D-F2A4-4D6B-AA4C-910EE132A3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8D970D-F2A4-4D6B-AA4C-910EE132A3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF432CCF-5EDE-40BB-85B8-CE68B9DC128A}
+	EndGlobalSection
+EndGlobal

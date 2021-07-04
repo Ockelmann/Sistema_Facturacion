@@ -1,0 +1,49 @@
+﻿@model Sistema_Facturacion.Models.Factura
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>¿Desea Eliminar?</h3>
+
+<form asp-action="Delete">
+    <table>
+
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Numero_Factura)</td>
+            <td>
+                @Html.DisplayFor(m => m.Numero_Factura)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Fecha)</td>
+            <td>
+                @Html.DisplayFor(m => m.Fecha)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Total_Factura)</td>
+            <td>
+                @Html.DisplayFor(m => m.Total_Factura)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Anulada)</td>
+            <td>
+                @Html.DisplayFor(m => m.Anulada)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Codigo_Clientefk)</td>
+            <td>
+                @Html.DisplayFor(m => m.Codigo_Clientefk)
+            </td>
+        </tr>
+        <tr>
+            <td><a href="@Url.Action("ConfirmacionEliminar","Facturas",new { id = Model.Numero_Factura })"> <input type="button" value="Eliminar Factura" class="btn btn-danger" /></a> </td>
+            <td>@Html.ActionLink("Regresar a la Lista", "Index", "Facturas")</td>
+        </tr>
+
+    </table>
+
+</form>

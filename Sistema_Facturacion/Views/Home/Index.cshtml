@@ -1,0 +1,17 @@
+﻿<link rel="stylesheet" href="./css/login.css" />
+
+
+<form action="/Login" method="post">
+    <h1 class="title"> Iniciar Sesión </h1>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password" required>
+    </div>
+
+    <button type="submit" title="Ingresar" name="Ingresar" class="btn btn-primary">Ingresar</button>
+</form>
+
+
+<a href="@Url.ActionLink("Index","Home")">« Volver</a>

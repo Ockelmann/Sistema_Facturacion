@@ -1,0 +1,61 @@
+﻿@model Sistema_Facturacion.Models.Producto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>¿Desea Eliminar?</h3>
+
+<form asp-action="Delete">
+    <table>
+
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Codigo_Producto)</td>
+            <td>
+                @Html.DisplayFor(m => m.Codigo_Producto)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.nombre)</td>
+            <td>
+                @Html.DisplayFor(m => m.nombre)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.descripcion)</td>
+            <td>
+                @Html.DisplayFor(m => m.descripcion)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Precio)</td>
+            <td>
+                @Html.DisplayFor(m => m.Precio)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Costo)</td>
+            <td>
+                @Html.DisplayFor(m => m.Costo)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Existencia)</td>
+            <td>
+                @Html.DisplayFor(m => m.Existencia)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Activo)</td>
+            <td>
+                @Html.DisplayFor(m => m.Activo)
+            </td>
+        </tr>
+        <tr>
+            <td><a href="@Url.Action("ConfirmacionEliminar","Productos",new { id = Model.Codigo_Producto})"> <input type="button" value="Eliminar Producto" class="btn btn-danger" /></a> </td>
+            <td>@Html.ActionLink("Regresar a la Lista", "Index", "Productos")</td>
+        </tr>
+
+    </table>
+
+</form>

@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Reportes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reportes:</h1>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ventas por producto:</h5>
+                <p class="card-text">
+                    Muestra el monto total vendido de cada
+                    producto(día por día).
+                </p>
+                @Html.ActionLink("Ver Reporte", "ReporteVentasProducto", new { Codigo_Producto = 0 }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ventas por producto:</h5>
+                <p class="card-text">
+                    Muestra el monto total vendido en el rango de fechas(día por día).
+                </p>
+                @Html.ActionLink("Ver Reporte", "ReporteVentasProductoFecha", new { fechaInicio = "1753/1/1 12:00:00", fechaFinal = "9999/12/31 11:59:59 " }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ventas por cliente:</h5>
+                <p class="card-text">
+                    Muestra el monto total vendido de cada
+                    Cliente(día por día).
+                </p>
+                @Html.ActionLink("Ver Reporte", "ReporteVentasCliente", new { Codigo_Cliente = 0 }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ventas por cliente:</h5>
+                <p class="card-text">
+                    Muestra el monto total vendido  en el rango de fechas (día por día).
+                </p>
+                @Html.ActionLink("Ver Reporte", "ReporteVentasClienteFecha", new { fechaInicio = "1753/1/1 12:00:00", fechaFinal = "9999/12/31 11:59:59 " }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Estadísticas de facturación:</h5>
+                <p class="card-text">
+                    Muestra día por día la cantidad de
+                    facturas emitidas, el monto total facturado y la cantidad de productos
+                    facturados
+                </p>
+                @Html.ActionLink("Ver Reporte", "ReporteEstadisticaFacturacion", new { fechaInicio = "1753/1/1 12:00:00", fechaFinal = "9999/12/31 11:59:59 " }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+﻿@model Sistema_Facturacion.Models.Factura
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar Usuario</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Numero_Factura" />
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-labael"> </label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total_Factura" class="control-labael"> </label>
+                <input asp-for="Total_Factura" value="0" class="form-control" disabled />
+                <span asp-validation-for="Total_Factura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anulada" class="control-labael"> </label>
+                <select asp-for="Anulada" class="form-control">
+                    <option value="" selected>Seleccione una opcion</option>
+                    <option value="S">S</option>
+                    <option value="N">N</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codigo_Clientefk" class="control-label"></label>
+                <select asp-for="Codigo_Clientefk" class="form-control" asp-items="ViewBag.Codigo_Cliente"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

@@ -1,0 +1,55 @@
+﻿@model Sistema_Facturacion.Models.Cliente
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>¿Desea Eliminar?</h3>
+
+<form asp-action="Delete">
+    <table>
+
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Codigo_Cliente)</td>
+            <td>
+                @Html.DisplayFor(m => m.Codigo_Cliente)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Nombres)</td>
+            <td>
+                @Html.DisplayFor(m => m.Nombres)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Apellido)</td>
+            <td>
+                @Html.DisplayFor(m => m.Apellido)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Nit)</td>
+            <td>
+                @Html.DisplayFor(m => m.Nit)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Telefonos)</td>
+            <td>
+                @Html.DisplayFor(m => m.Telefonos)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.Activo)</td>
+            <td>
+                @Html.DisplayFor(m => m.Activo)
+            </td>
+        </tr>
+        <tr>
+            <td><a href="@Url.Action("ConfirmacionEliminar","Clientes",new { id = Model.Codigo_Cliente })"> <input type="button" value="Eliminar Cliente" class="btn btn-danger" /></a> </td>
+            <td>@Html.ActionLink("Regresar a la Lista", "Index", "Clientes")</td>
+        </tr>
+
+    </table>
+
+</form>
